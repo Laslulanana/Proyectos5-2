@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 83280930180801700}
   - component: {fileID: 7912384815106825445}
   - component: {fileID: 2428212529053363054}
+  - component: {fileID: 2113267441452334911}
   m_Layer: 0
   m_Name: CirculoZombie_1
   m_TagString: Untagged
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 1
   m_Sprite: {fileID: 6416372443350512643, guid: 1ffd3b03463b2fa43a127201f8f075eb,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -102,3 +103,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2113267441452334911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4780433848773769194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6dd80ba9c8507340bd6610d0116deda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

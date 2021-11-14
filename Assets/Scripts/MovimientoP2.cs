@@ -128,9 +128,10 @@ public class MovimientoP2 : MonoBehaviour
 		 
 		if (Input.GetKey(KeyCode.K) && cooldownHabilidades <= 0 )
 		{
-			targetHabilidadK.position = m_transform.position + Vector3.forward*3 ;
-			m_transform.position = targetHabilidadK.position;
+			Instantiate(sombraHabilidadEnemigo, targetHabilidadK.position, targetHabilidadK.rotation);
 
+			m_transform.position = targetHabilidadK.position;
+			
 
 
 

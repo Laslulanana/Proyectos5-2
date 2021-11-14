@@ -33,16 +33,18 @@ public class npc1 : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		dist = Vector3.Distance(player.transform.position, transform.position);
+		
+			dist = Vector3.Distance(player.transform.position, transform.position);
 		Movement();
+		
 
 		if (life <= 0)
 		{
 			KillEnemy();
 		}
 
-
 		
+
 
 
 
