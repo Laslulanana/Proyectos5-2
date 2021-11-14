@@ -24,34 +24,35 @@ public class Granadas : MonoBehaviour
     {
         
     }
-   /* private void OnTriggerStay2D(Collider2D collider)
-    {if (collider.tag == "Zombie")
-        {if (tiempoSlow <= 5)
-            {
-                float reduccion = z2.speed *0.5f;
-            z2.speed = reduccion;
-                tiempoSlow++ ;
-            }
-            tiempoSlow = 0;
-        }
-    
-    
-        
-    }
-   
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Zombie")
-        {
-
-            z2.speed = velocidadnormal;
+    /* private void OnTriggerStay2D(Collider2D collider)
+     {if (collider.tag == "Zombie")
+         {if (tiempoSlow <= 5)
+             {
+                 float reduccion = z2.speed *0.5f;
+             z2.speed = reduccion;
+                 tiempoSlow++ ;
+             }
+             tiempoSlow = 0;
+         }
 
 
-        }
-    }
-   */
+
+     }
+
+     private void OnTriggerExit2D(Collider2D collision)
+     {
+         if (collision.tag == "Zombie")
+         {
+
+             z2.speed = velocidadnormal;
+
+
+         }
+     }
+    */
     private void OnTriggerEnter2D(Collider2D other)
     {
+        
         if (other.tag == "Zombie" || other.tag == "Pared")
         {
             var particulasClon = Instantiate(particulasVeneno, this.transform.position, this.transform.rotation);
@@ -60,5 +61,7 @@ public class Granadas : MonoBehaviour
             
             
         }
+        
     }
+   
 }

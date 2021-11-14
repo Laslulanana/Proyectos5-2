@@ -13,6 +13,8 @@ public class WeaponController : MonoBehaviour
 	public GameObject bullet;
 	Weapon wp;
 
+	bool NuevaArma1;
+	bool NuevaArma2;
 
 	float nextFire;
 	// Start is called before the first frame update
@@ -21,6 +23,9 @@ public class WeaponController : MonoBehaviour
 		wp = FindObjectOfType<Weapon>();
 
 		nextFire = 0;
+
+		NuevaArma1 = true;
+		NuevaArma2 = false;
 
 	}
 
@@ -36,13 +41,13 @@ public class WeaponController : MonoBehaviour
         }
 		if (wp.ownedWeapon == true)
 		{
-			Debug.Log("Accion");
+			//Debug.Log("Accion");
 			WeaponAttack();
 			SelectWeapon();
 		}
         else
         {
-			Debug.Log("oyoyoyoyo");
+			//Debug.Log("oyoyoyoyo");
         }
 		
 
@@ -68,6 +73,7 @@ public class WeaponController : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Alpha1) && weaponsPlayer.Count > 0)
 		{
+			
 			
 			i1.sprite = weaponsPlayer[0].sprTopWeapon;
 			i1.enabled = true;

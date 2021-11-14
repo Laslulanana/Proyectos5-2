@@ -14,13 +14,17 @@ public class MovimientoP2 : MonoBehaviour
 	 float cooldownHabilidades ;
 	public float cooldownHabilidadesMax = 5;
 	Bala bl;
+	bool slow;
+	public float slowCd;
 
 	// Start is called before the first frame update
 	void Start()
     {
+		slow = false;
 		cooldownHabilidades = cooldownHabilidadesMax;
 		gm = FindObjectOfType<GameManager>();
 		bl = FindObjectOfType<Bala>();
+		slowCd = -1;
 	}
 
     // Update is called once per frame
@@ -35,9 +39,24 @@ public class MovimientoP2 : MonoBehaviour
 			gm.puntuacion1 += 20;
 		}
 		
-		
+		if(slow)
+        {
+			speed = 0.25f;
 
-	
+        }
+        else
+        {
+			speed = 0.5f;
+        }
+
+		if(slowCd>0)
+        {
+			slowCd -= Time.deltaTime;
+        }
+        if(slowCd<=0)
+        {
+			speed = 0.5f;
+        }
 	}
 
 	public void Movement()
@@ -79,22 +98,22 @@ public class MovimientoP2 : MonoBehaviour
 
 		if (Input.GetKey(KeyCode.Y) && Input.GetKey(KeyCode.J))
 		{
-			transform.right = Vector2.up + Vector2.right;
+			transform.right = Vector2.up + Vector2.right* speed * Time.deltaTime;
 		}
 
 		if (Input.GetKey(KeyCode.Y) && Input.GetKey(KeyCode.G))
 		{
-			transform.right = Vector2.up + Vector2.left;
+			transform.right = Vector2.up + Vector2.left*speed* Time.deltaTime;
 		}
 
 		if (Input.GetKey(KeyCode.G) && Input.GetKey(KeyCode.H))
 		{
-			transform.right = Vector2.down + Vector2.left;
+			transform.right = Vector2.down + Vector2.left *speed * Time.deltaTime;
 		}
 
 		if (Input.GetKey(KeyCode.H) && Input.GetKey(KeyCode.J))
 		{
-			transform.right = Vector2.down + Vector2.right;
+			transform.right = Vector2.down + Vector2.right * speed * Time.deltaTime;
 		}
 	}
 
@@ -113,6 +132,29 @@ public class MovimientoP2 : MonoBehaviour
 			Destroy(collider.gameObject);
 
 		}
+
+
+		if (collider.tag == "Slow")
+		{
+			slow = true;
+			slowCd = 4;
+
+        }
+        
+
+	}
+	private void OnTriggerExit2D(Collider2D collider)
+	{
+
+		
+
+		if (collider.tag == "Slow")
+		{
+			slow = false;
+
+
+		}
+		
 
 	}
 	void Habilidades ()

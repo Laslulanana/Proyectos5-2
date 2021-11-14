@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: de759e4577c9bae4994c6f0e255800ab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2c8d4e2c3462454e8d661150686c378, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   speedBullet: 3
   lifeBullet: 5
   prefBullet: {fileID: 1308143297, guid: d4a7447795b811f4c994ad3f9515e5f8, type: 3}
-  sprTopWeapon: {fileID: 21300000, guid: 5916808421d1a0b4fa3f19efd227e6fc, type: 3}
+  sprTopWeapon: {fileID: 21300000, guid: e2c8d4e2c3462454e8d661150686c378, type: 3}
   nameWeapon: granadas
   ownedWeapon: 0
 --- !u!61 &8802166322911125088

@@ -6,7 +6,7 @@ public class MovimientoP1 : MonoBehaviour
 {
 
 	public float vida;
-	public float speed = 50;
+	public float speed = 150;
 	bool isMoving = false;
 	Vector3 mousePos;
 	Camera cam;
