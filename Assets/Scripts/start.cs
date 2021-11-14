@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class start : MonoBehaviour
 {
+    public GameObject botones;
+    public GameObject controles;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,4 +26,25 @@ public class start : MonoBehaviour
 		SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
 
 	}
+    public void Controles()
+    {
+
+        botones.SetActive(false);
+        controles.SetActive(true);
+
+    }
+    public void SalirControles()
+    {
+
+        botones.SetActive(true);
+        controles.SetActive(false);
+
+    }
+    public void Menu()
+    {
+
+        SceneManager.LoadScene("titulo", LoadSceneMode.Single);
+
+    }
+
 }
