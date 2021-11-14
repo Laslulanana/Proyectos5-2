@@ -9,12 +9,16 @@ public class MovimientoP2 : MonoBehaviour
 	public Transform target;
 	public Transform m_transform;
 	public GameObject sombraHabilidadEnemigo;
+    public Transform targetHabilidadK;
 	GameManager gm;
+	 float cooldownHabilidades ;
+	public float cooldownHabilidadesMax = 5;
 	Bala bl;
 
 	// Start is called before the first frame update
 	void Start()
     {
+		cooldownHabilidades = cooldownHabilidadesMax;
 		gm = FindObjectOfType<GameManager>();
 		bl = FindObjectOfType<Bala>();
 	}
@@ -30,7 +34,7 @@ public class MovimientoP2 : MonoBehaviour
 			KillEnemy();
 			gm.puntuacion1 += 20;
 		}
-
+		
 		
 
 	
@@ -112,27 +116,34 @@ public class MovimientoP2 : MonoBehaviour
 
 	}
 	void Habilidades ()
-    { float tiempoControlHabilidades =0;
-		float tiempoCooldownHabilidades = 15;
-		if (Input.GetKeyDown(KeyCode.K) && Time.time > tiempoCooldownHabilidades)
-		{
-			
-			   Vector3 sombra = this.transform.position + transform.forward + new Vector3(0,0,5);
-			Instantiate(sombraHabilidadEnemigo , sombra , this.transform.rotation);
-			if (tiempoControlHabilidades < 3)
-			{
-				tiempoControlHabilidades += Time.deltaTime;
-			}
-			if (tiempoControlHabilidades >= 3)
 
-            { this.transform.position = sombraHabilidadEnemigo.transform.position;
-				Destroy(sombraHabilidadEnemigo.gameObject,1);
-			
-			}
-			
+		
+    {
+		
+		if (cooldownHabilidades>0)
+		{
+			cooldownHabilidades -= Time.deltaTime;
 
 		}
-		tiempoCooldownHabilidades = tiempoCooldownHabilidades + tiempoCooldownHabilidades;
+		 
+		if (Input.GetKey(KeyCode.K) && cooldownHabilidades <= 0 )
+		{
+			targetHabilidadK.position = m_transform.position + Vector3.forward*3 ;
+			m_transform.position = targetHabilidadK.position;
+
+
+
+
+			cooldownHabilidades = cooldownHabilidadesMax;	
+
+		}
+			
+		
+		
+
+
+
+
 	}
 	void KillEnemy()
 	{

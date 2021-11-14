@@ -42,7 +42,7 @@ public class WeaponController : MonoBehaviour
 		}
         else
         {
-			Debug.Log("Edurne");
+			Debug.Log("oyoyoyoyo");
         }
 		
 
